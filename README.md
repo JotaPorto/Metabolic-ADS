@@ -62,9 +62,7 @@ calculadora-tmb-imc/
 ├── index.html          # Estrutura principal da aplicação
 ├── styles.css          # Estilos e design responsivo
 ├── script.js           # Lógica e funcionalidades
-├── README.md           # Documentação do projeto
-└── assets/
-    └── screenshots/    # Capturas de tela (opcional)
+└── README.md           # Documentação do projeto
 ```
 
 ## 🔧 Como Executar
@@ -198,4 +196,5 @@ Este projeto é desenvolvido para fins acadêmicos na Universidade Presbiteriana
 ---
 
 **Desenvolvido com 💚 pela equipe ADS Mackenzie**
+
 
