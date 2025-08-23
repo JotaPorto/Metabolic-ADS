@@ -141,16 +141,16 @@ Mulheres: TMB = 447.593 + (9.247 × peso) + (3.098 × altura) - (4.330 × idade)
 ## 🎨 Características do Design
 
 - **Design Responsivo**: Adaptável a diferentes tamanhos de tela
-- **Paleta de Cores**: Azul e cinza para profissionalismo
+- **Paleta de Cores**: ?
 - **Tipografia**: Fontes system para melhor performance
-- **Animações Suaves**: Transições CSS para melhor UX
+- **Animações**: Transições CSS
 - **Acessibilidade**: Contraste adequado e navegação por teclado
 
 ## 🔒 Segurança e Privacidade
 
 - **Dados Locais**: Informações armazenadas apenas no navegador do usuário
 - **Sem Servidor**: Não há transmissão de dados pessoais
-- **Código Aberto**: Transparência total do funcionamento
+- **Código Aberto**: Transparência do funcionamento
 
 ## 📝 Casos de Uso Implementados
 
@@ -165,28 +165,11 @@ Mulheres: TMB = 447.593 + (9.247 × peso) + (3.098 × altura) - (4.330 × idade)
 - **Fluxo**: Inserção de peso/altura → Cálculo → Classificação → Recomendações
 - **Resultado**: IMC calculado com sugestões de saúde
 
-## 🏆 Diferenciais do Projeto
-
-- Interface moderna e intuitiva
-- Duas fórmulas de TMB para comparação
-- Recomendações personalizadas baseadas nos resultados
-- Histórico persistente de cálculos
-- Geração de relatórios profissionais
-- Validações em tempo real
-- Design responsivo premium
-- Código bem documentado e organizado
-
 ## 🤝 Contribuições
-
-Este projeto foi desenvolvido como trabalho acadêmico. Para sugestões ou melhorias, entre em contato com a equipe através dos RAs fornecidos.
-
-## 📄 Licença
 
 Este projeto é desenvolvido para fins acadêmicos na Universidade Presbiteriana Mackenzie.
 
----
 
-**Desenvolvido com 💚 pela equipe ADS Mackenzie**
 
 
 
