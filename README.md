@@ -69,21 +69,12 @@ calculadora-tmb-imc/
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/SEU_USUARIO/calculadora-tmb-imc.git
+   git clone https://github.com/JotaPorto/Metabolic-ADS.git
    ```
 
 2. **Abra o arquivo index.html** em qualquer navegador moderno
    - Não requer servidor local
    - Funciona diretamente no navegador
-
-3. **Para desenvolvimento local com servidor:**
-   ```bash
-   # Com Python
-   python -m http.server 8000
-   
-   # Com Node.js (usando live-server)
-   npx live-server
-   ```
 
 ## 📱 Como Usar
 
@@ -196,5 +187,6 @@ Este projeto é desenvolvido para fins acadêmicos na Universidade Presbiteriana
 ---
 
 **Desenvolvido com 💚 pela equipe ADS Mackenzie**
+
 
 
