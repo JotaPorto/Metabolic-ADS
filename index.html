@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metabolic - Calculadora TMB e IMC</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<script src="./script.js"></script>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>Metabolic</h1>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Seção de Entrada de Dados -->
+            <section class="input-section">
+                <div class="card">
+                    <h2><i class="fas fa-user"></i> Dados Pessoais</h2>
+                    <form id="userForm" class="form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input type="text" id="nome" placeholder="Seu nome completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="idade">Idade:</label>
+                                <input type="number" id="idade" min="15" max="100" placeholder="Anos" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="peso">Peso (kg):</label>
+                                <input type="number" id="peso" step="0.1" min="30" max="300" placeholder="Ex: 70.5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="altura">Altura (cm):</label>
+                                <input type="number" id="altura" min="100" max="250" placeholder="Ex: 175" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Sexo:</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="sexo" value="masculino" required>
+                                        <i class="fas fa-mars"></i> Masculino
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="sexo" value="feminino" required>
+                                        <i class="fas fa-venus"></i> Feminino
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="atividade">Nível de Atividade:</label>
+                                <select id="atividade" required>
+                                    <option value="">Selecione</option>
+                                    <option value="1.2">Sedentário (pouco ou nenhum exercício)</option>
+                                    <option value="1.375">Leve (1-3 dias/semana)</option>
+                                    <option value="1.55">Moderado (3-5 dias/semana)</option>
+                                    <option value="1.725">Intenso (6-7 dias/semana)</option>
+                                    <option value="1.9">Muito intenso (2x/dia, exercícios pesados)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formula">Fórmula para TMB:</label>
+                            <select id="formula" required>
+                                <option value="">Escolha a fórmula</option>
+                                <option value="mifflin">Mifflin-St Jeor (Recomendada)</option>
+                                <option value="harris">Harris-Benedict</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-calculator"></i> Calcular TMB e IMC
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Seção de Resultados -->
+            <section id="results-section" class="results-section hidden">
+                <div class="results-grid">
+                    <!-- Resultado IMC -->
+                    <div class="card result-card">
+                        <h3><i class="fas fa-weight"></i> Índice de Massa Corporal (IMC)</h3>
+                        <div class="result-value">
+                            <span id="imc-valor">--</span>
+                            <span class="unit">kg/m²</span>
+                        </div>
+                        <div id="imc-classificacao" class="classification">--</div>
+                        <div class="imc-scale">
+                            <div class="scale-item" data-range="abaixo">
+                                <span class="range">< 18.5</span>
+                                <span class="label">Abaixo do peso</span>
+                            </div>
+                            <div class="scale-item" data-range="normal">
+                                <span class="range">18.5 - 24.9</span>
+                                <span class="label">Peso normal</span>
+                            </div>
+                            <div class="scale-item" data-range="sobrepeso">
+                                <span class="range">25.0 - 29.9</span>
+                                <span class="label">Sobrepeso</span>
+                            </div>
+                            <div class="scale-item" data-range="obesidade1">
+                                <span class="range">30.0 - 34.9</span>
+                                <span class="label">Obesidade I</span>
+                            </div>
+                            <div class="scale-item" data-range="obesidade2">
+                                <span class="range">35.0 - 39.9</span>
+                                <span class="label">Obesidade II</span>
+                            </div>
+                            <div class="scale-item" data-range="obesidade3">
+                                <span class="range">≥ 40.0</span>
+                                <span class="label">Obesidade III</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resultado TMB -->
+                    <div class="card result-card">
+                        <h3><i class="fas fa-fire"></i> Taxa Metabólica Basal (TMB)</h3>
+                        <div class="result-value">
+                            <span id="tmb-valor">--</span>
+                            <span class="unit">kcal/dia</span>
+                        </div>
+                        <div id="formula-usada" class="classification">--</div>
+                        
+                        <div class="tmb-details">
+                            <div class="detail-item">
+                                <span class="label">Gasto Calórico Total:</span>
+                                <span id="gasto-total">-- kcal/dia</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Para perder 0.5kg/semana:</span>
+                                <span id="perda-peso">-- kcal/dia</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Para ganhar 0.5kg/semana:</span>
+                                <span id="ganho-peso">-- kcal/dia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendações -->
+                <div class="card recommendations">
+                    <h3><i class="fas fa-lightbulb"></i> Recomendações Personalizadas</h3>
+                    <div id="recomendacoes-content">
+                        <!-- Conteúdo será preenchido dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="action-buttons">
+                    <button onclick="salvarHistorico()" class="btn-secondary">
+                        <i class="fas fa-save"></i> Salvar no Histórico
+                    </button>
+                    <button onclick="gerarRelatorio()" class="btn-secondary">
+                        <i class="fas fa-file-pdf"></i> Gerar Relatório
+                    </button>
+                    <button onclick="novoCalculo()" class="btn-outline">
+                        <i class="fas fa-redo"></i> Novo Cálculo
+                    </button>
+                </div>
+            </section>
+
+            <!-- Histórico -->
+            <section class="history-section">
+                <div class="card">
+                    <h3><i class="fas fa-history"></i> Histórico de Cálculos</h3>
+                    <div id="historico-lista" class="history-list">
+                        <p class="empty-state">Nenhum cálculo realizado ainda</p>
+                    </div>
+                    <button onclick="limparHistorico()" class="btn-outline btn-small">
+                        <i class="fas fa-trash"></i> Limpar Histórico
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 - Metabolic - Calculadora TMB & IMC | Desenvolvido por: André Henrique, João Pedro Porto, Fabio Almeida</p>
+        </div>
+    </footer>
+
+   
+</body>
+</html>
