@@ -6,9 +6,9 @@
 
 ## 👥 Equipe de Desenvolvimento
 
-- **André Henrique** - RA: 10
+- **André Henrique Eduardo de Jesus** - RA: 10414852
 - **João Pedro Porto** - RA: 10407770  
-- **Fabio Almeida** - RA: 10
+- **Fabio Batista de Almeida** - RA: 10289796
 - **Professor:** Tomaz Mikio Sasaki
 
 ## 📋 Sobre o Projeto
@@ -198,3 +198,4 @@ Este projeto é desenvolvido para fins acadêmicos na Universidade Presbiteriana
 ---
 
 **Desenvolvido com 💚 pela equipe ADS Mackenzie**
+
