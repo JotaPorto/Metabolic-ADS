@@ -436,6 +436,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Compartilhar resultados via WhatsApp
+function compartilharWhatsApp() {
+    if (!window.ultimoCalculo) {
+        alert('Nenhum cÃ¡lculo para compartilhar!');
+        return;
+    }
+    
+    const calculo = window.ultimoCalculo;
+    
+    // Montar mensagem formatada
+    const mensagem = `
+*Meus Resultados - Calculadora TMB e IMC*
+
+*Dados Pessoais:*
+- Nome: ${calculo.nome}
+- Idade: ${calculo.idade} anos
+- Peso: ${calculo.peso} kg
+- Altura: ${calculo.altura} cm
+- Sexo: ${calculo.sexo}
+
+*Resultados:*
+- IMC: ${calculo.imc} kg/m²
+- Classificação: ${calculo.classificacaoIMC.texto}
+- TMB: ${calculo.tmb} kcal/dia
+- Gasto Calórico Total: ${calculo.gastoTotal} kcal/dia
+- Fórmula: ${calculo.formula}
+
+Data: ${calculo.data}
+
+Gerado em: Calculadora Metabolic
+    `.trim();
+    
+    // Codificar mensagem para URL
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    
+    // Abrir WhatsApp Web ou app
+    const urlWhatsApp = `https://wa.me/?text=${mensagemCodificada}`;
+    window.open(urlWhatsApp, '_blank');
+}
+
 // Atalhos de teclado
 document.addEventListener('keydown', function(e) {
     // Ctrl + Enter para calcular
