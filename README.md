@@ -68,14 +68,31 @@ calculadora-tmb-imc/
 
 ## 🔧 Como Executar
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/JotaPorto/Metabolic-ADS.git
-   ```
+Pré-requisitos
 
-2. **Abra o arquivo index.html** em qualquer navegador moderno
-   - Não requer servidor local
-   - Funciona diretamente no navegador
+Qualquer navegador moderno (Chrome, Firefox, Edge)
+
+Instruções para Desenvolvedores
+Opção 1: Clonar o Repositório
+
+Abra o terminal/prompt de comando no diretório onde deseja clonar o projeto
+Clone o repositório:
+
+bash   git clone https://github.com/JotaPorto/Metabolic-ADS.git
+
+Navegue até a pasta do projeto:
+
+bash   cd Metabolic-ADS
+
+Abra o arquivo index.html
+
+
+Opção 2: Download Manual
+
+Acesse o repositório em https://github.com/JotaPorto/Metabolic-ADS
+Clique no botão "Code" (verde) e selecione "Download ZIP"
+Extraia o arquivo ZIP em uma pasta de sua escolha
+Abra o arquivo index.html no seu navegador
 
 ## 📱 Como Usar
 
@@ -188,3 +205,4 @@ Mulheres: TMB = 447.593 + (9.247 × peso) + (3.098 × altura) - (4.330 × idade)
 Este projeto é desenvolvido para fins acadêmicos na Universidade Presbiteriana Mackenzie.
 
 ---
+
