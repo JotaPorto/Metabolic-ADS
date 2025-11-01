@@ -77,14 +77,15 @@ Opção 1: Clonar o Repositório
 
 Abra o terminal/prompt de comando no diretório onde deseja clonar o projeto
 Clone o repositório:
-
+```
 bash   git clone https://github.com/JotaPorto/Metabolic-ADS.git
-
+```
 Navegue até a pasta do projeto:
-
+```
 bash   cd Metabolic-ADS
-
+```
 Abra o arquivo index.html
+
 
 
 Opção 2: Download Manual
@@ -205,4 +206,5 @@ Mulheres: TMB = 447.593 + (9.247 × peso) + (3.098 × altura) - (4.330 × idade)
 Este projeto é desenvolvido para fins acadêmicos na Universidade Presbiteriana Mackenzie.
 
 ---
+
 
