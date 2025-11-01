@@ -29,6 +29,7 @@ Este projeto consiste em uma aplicação web para cálculo de Taxa Metabólica B
 - Sugestões personalizadas para déficit/superávit calórico
 - Histórico de cálculos com armazenamento local
 - Geração de relatórios em PDF
+- **🆕 Compartilhamento de resultados via WhatsApp** - Envie seus resultados diretamente para WhatsApp
 - Interface responsiva para dispositivos móveis
 - Validação em tempo real dos dados inseridos
 
@@ -39,6 +40,7 @@ Este projeto consiste em uma aplicação web para cálculo de Taxa Metabólica B
 ✅ Calcular IMC com base no peso e altura  
 ✅ Gerar relatórios personalizados com sugestões calóricas  
 ✅ Comparar resultados com padrões da OMS  
+✅ Compartilhar resultados via WhatsApp
 
 #### Não-Funcionais
 ✅ **Desempenho**: Interface rápida e responsiva  
@@ -52,7 +54,6 @@ Este projeto consiste em uma aplicação web para cálculo de Taxa Metabólica B
 - **HTML5**: Estrutura semântica da aplicação
 - **CSS3**: Estilização moderna com Flexbox/Grid e animações
 - **JavaScript (ES6+)**: Lógica da aplicação e interatividade
-- **Font Awesome**: Ícones vetoriais
 - **LocalStorage**: Persistência de dados no navegador
 
 ## 📁 Estrutura do Projeto
@@ -60,7 +61,7 @@ Este projeto consiste em uma aplicação web para cálculo de Taxa Metabólica B
 ```
 calculadora-tmb-imc/
 ├── index.html          # Estrutura principal da aplicação
-├── styles.css          # Estilos e design responsivo
+├── style.css           # Estilos e design responsivo
 ├── script.js           # Lógica e funcionalidades
 └── README.md           # Documentação do projeto
 ```
@@ -98,6 +99,7 @@ calculadora-tmb-imc/
 4. **Recursos adicionais:**
    - Salve no histórico
    - Gere relatório em PDF
+   - Compartilhe via WhatsApp - Envie seus resultados formatados para WhatsApp
    - Consulte recomendações personalizadas
 
 ## 📊 Validações Implementadas
@@ -141,15 +143,17 @@ Mulheres: TMB = 447.593 + (9.247 × peso) + (3.098 × altura) - (4.330 × idade)
 ## 🎨 Características do Design
 
 - **Design Responsivo**: Adaptável a diferentes tamanhos de tela
-- **Paleta de Cores**: ?
+- **Paleta de Cores**: Gradiente roxo (principal), azul para ações, verde para sucesso, vermelho para alertas
 - **Tipografia**: Fontes system para melhor performance
-- **Animações**: Transições CSS
+- **Animações**: Transições CSS suaves e feedback visual imediato
 - **Acessibilidade**: Contraste adequado e navegação por teclado
+- **Ícones**: Font Awesome 6.0 com ícones intuitivos para cada função
 
 ## 🔒 Segurança e Privacidade
 
 - **Dados Locais**: Informações armazenadas apenas no navegador do usuário
-- **Sem Servidor**: Não há transmissão de dados pessoais
+- **Sem Servidor**: Não há transmissão de dados pessoais para servidores
+- **Compartilhamento WhatsApp**: Dados são enviados diretamente ao WhatsApp (ponta a ponta)
 - **Código Aberto**: Transparência do funcionamento
 
 ## 📝 Casos de Uso Implementados
@@ -158,18 +162,29 @@ Mulheres: TMB = 447.593 + (9.247 × peso) + (3.098 × altura) - (4.330 × idade)
 - **Ator**: Usuário
 - **Pré-condições**: Dados pessoais preenchidos
 - **Fluxo**: Seleção de fórmula → Cálculo → Exibição de resultados
-- **Pós-condições**: Resultado disponível para salvamento
+- **Pós-condições**: Resultado disponível para salvamento e compartilhamento
 
 ### Caso de Uso 2: Calcular IMC
 - **Ator**: Usuário
 - **Fluxo**: Inserção de peso/altura → Cálculo → Classificação → Recomendações
 - **Resultado**: IMC calculado com sugestões de saúde
 
+## 📝 Histórico de Atualizações
+
+### Versão 1.1 (Atual)
+- ✅ Adicionada funcionalidade de compartilhamento via WhatsApp
+- ✅ Ícone WhatsApp integrado ao botão de compartilhamento
+- ✅ Mensagem pré-formatada com todos os dados relevantes
+- ✅ Compatibilidade com WhatsApp Web e App mobile
+
+### Versão 1.0 (Inicial)
+- Cálculos básicos de TMB e IMC
+- Histórico de cálculos
+- Geração de relatórios PDF
+- Interface responsiva
+
 ## 🤝 Contribuições
 
 Este projeto é desenvolvido para fins acadêmicos na Universidade Presbiteriana Mackenzie.
 
-
-
-
-
+---
